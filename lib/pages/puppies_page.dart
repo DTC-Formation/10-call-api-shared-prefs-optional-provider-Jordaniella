@@ -47,38 +47,43 @@ class PuppiesPage extends StatelessWidget {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
-                        Column(
-                          mainAxisAlignment: MainAxisAlignment.spaceAround,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              result.data?.breeds?[0].name ?? "Name Pets",
-                              style: TextStyle(
-                                  fontSize: 20,
-                                  color:
-                                      context.watch<DarkProvider>().textColor),
-                            ),
-                            Padding(
-                              padding:
-                                  const EdgeInsets.only(top: 8.0, bottom: 8.0),
-                              child: Text(
-                                result.data?.breeds?[0].temperament ??
-                                    "Temperament Pets",
+                        SizedBox(
+                          width: 150,
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.spaceAround,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                result.data?.breeds?[0].name ?? "Name Pets",
                                 style: TextStyle(
+                                    fontSize: 20,
                                     color: context
                                         .watch<DarkProvider>()
                                         .textColor),
                               ),
-                            ),
-                            Text(
-                              result.data?.breeds?[0].origin ?? "Origin Pets",
-                              style: TextStyle(
-                                  fontSize: 18,
-                                  fontStyle: FontStyle.italic,
-                                  color:
-                                      context.watch<DarkProvider>().textColor),
-                            )
-                          ],
+                              Padding(
+                                padding: const EdgeInsets.only(
+                                    top: 8.0, bottom: 8.0),
+                                child: Text(
+                                  result.data?.breeds?[0].temperament ??
+                                      "Temperament Pets",
+                                  style: TextStyle(
+                                      color: context
+                                          .watch<DarkProvider>()
+                                          .textColor),
+                                ),
+                              ),
+                              Text(
+                                result.data?.breeds?[0].origin ?? "Origin Pets",
+                                style: TextStyle(
+                                    fontSize: 18,
+                                    fontStyle: FontStyle.italic,
+                                    color: context
+                                        .watch<DarkProvider>()
+                                        .textColor),
+                              )
+                            ],
+                          ),
                         ),
                         SizedBox(
                           width: 130,
